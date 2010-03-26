@@ -77,7 +77,7 @@ class ServiceController < ApplicationController
     
     return if !valid_form { |errors|
       validate_host(errors, 'host', host)
-      validate_range(errors, 'port', port.to_i, 1, 65535) if !port.blank?
+      validate_range(errors, 'port', port, 1, 65535) if !port.blank?
     }
     
     port = "-p#{port}" if !port.blank?
@@ -116,7 +116,7 @@ class ServiceController < ApplicationController
     end
   
     def validate_range(errors, field_name, field, min, max)
-      if field < min or field > max
+      if field.to_i.to_s != field or field.to_i < min or field.to_i > max
         errors.push({ :field => field_name, :text => "Number should be in range [#{min}, #{max}]" })
       end
     end
