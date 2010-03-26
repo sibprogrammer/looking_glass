@@ -134,6 +134,10 @@ input[type="text"] {
   width: 200px;
 }
 
+input.number {
+  width: 50px;
+}
+
 input.error {
   border: 1px solid red;
 }

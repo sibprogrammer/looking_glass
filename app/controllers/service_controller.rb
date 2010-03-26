@@ -73,12 +73,16 @@ class ServiceController < ApplicationController
   
   def nmap
     host = params['host']
+    port = params['port']
     
     return if !valid_form { |errors|
       validate_host(errors, 'host', host)
+      validate_range(errors, 'port', port.to_i, 1, 65535) if !port.blank?
     }
     
-    execute("nmap #{host} 2>&1")
+    port = "-p#{port}" if !port.blank?
+    
+    execute("nmap #{port} #{host} 2>&1")
   end
   
   private
@@ -109,6 +113,12 @@ class ServiceController < ApplicationController
     
     def validate_host(errors, field_name, field)
       errors.push({ :field => field_name, :text => 'Invalid domain or IP' }) if field !~ /^[-\.a-z0-9]+$/i
+    end
+  
+    def validate_range(errors, field_name, field, min, max)
+      if field < min or field > max
+        errors.push({ :field => field_name, :text => "Number should be in range [#{min}, #{max}]" })
+      end
     end
   
 end
