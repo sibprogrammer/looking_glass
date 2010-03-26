@@ -1,0 +1,150 @@
+body {
+  background-color: white;
+  color: black;
+  font-size: 95%;
+  font-family: "Lucida Grande", "Bitstream Vera Sans", Helvetica, Verdana, Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.hidden {
+  display: none;
+}
+
+#header {
+  background-color: #c00;
+  color: white;
+  width: 100%;
+  padding: 1px 0 4px;
+}
+
+#header h2 {
+  padding: 0 0 0 20px;
+}
+
+#menu {
+  float: right;
+  padding: 10px 10px 0 0;
+}
+
+#menu a, #menu a:visited {
+  color: white;
+  font-size: 70%;
+  text-decoration: none;
+}
+
+#menu a:hover {
+  text-decoration: underline;
+}
+
+#logo {
+  float: left;
+  padding: 10px 10px 0 10px;
+}
+
+#navigation {
+  height: 20px;
+  padding: 0 0 0 20px;
+  font-size: 120%;
+}
+
+#navigation a, #navigation a:visited {
+  color: black;
+  text-decoration: none;
+}
+
+#navigation a:hover {
+  color: gray;
+}
+
+#navigation ul {
+  display: block;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: auto;
+}
+
+#navigation ul li {
+  display: block;
+  float: left;
+  margin: 0;
+  padding: 0 2px;
+}
+
+#navigation ul li.selected a {
+  background-color: white;
+  border-color: silver silver -moz-use-text-color;
+  border-style: solid solid none;
+  border-width: 1px 1px medium;
+}
+
+#navigation ul li a {
+  padding: 8px 16px 3px;
+  text-decoration: none;
+  background-color: #EAE3C5;
+  border-color: silver silver -moz-use-text-color;
+  border-style: solid solid none;
+  border-width: 1px 1px medium;
+}
+
+#main {
+  padding: 20px;
+}
+
+.hint {
+  padding: 0 0 0 10px;
+  color: gray;
+}
+
+form .row {
+  margin: 20px;
+}
+
+form .output {
+  padding: 20px;
+  background-color: #F5F5F5;
+  border: 1px solid silver;
+}
+
+form input.loading {
+  background: transparent url(/images/indicator.gif) no-repeat scroll 3px 3px;
+  padding: 2px 0 2px 20px;
+}
+
+input[type="submit"] {
+  padding: 2px;
+  width: 120px;
+  background: #F5F5F5 url(/images/zoom.png) no-repeat scroll 3px 3px;
+  border: 1px solid silver;
+}
+
+input[type="submit"][disabled] {
+  border: 1px solid black;
+  background-color: #F5F5F5;
+}
+
+input[type="text"] {
+  padding: 5px 3px;
+  background: #fff;
+  font-family: inherit;
+  border: 1px solid #E6E1DB;
+  border-right-color: #D6D1CC;
+  border-bottom-color: #D6D1CC;
+  width: 200px;
+}
+
+input.error {
+  border: 1px solid red;
+}
+
+.row .field {
+  padding: 0 5px;
+}
+
+.output .error {
+  color: red;
+  padding: 0 24px 20px;
+  line-height: 20px;
+  background: transparent url(/images/cancel.png) no-repeat scroll 3px 3px;
+}

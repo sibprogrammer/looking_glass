@@ -1,0 +1,8 @@
+<div class="hint">mtr - a network diagnostic tool</div>
+<% form_tag '/service/' + page[:id], :onsubmit => "LookingGlass.formHandler(this); return false;" do -%>
+  <div class="row">
+    <span class="field">Host: <input type="text" name="host"></span>
+  </div>
+  <div class="row"><%= submit_tag 'Execute' %></div>
+  <div class="row output-wrapper"></div>
+<% end -%>

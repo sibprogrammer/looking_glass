@@ -1,0 +1,13 @@
+<div class="hint">host - DNS lookup utility</div>
+<% form_tag '/service/' + page[:id], :onsubmit => "LookingGlass.formHandler(this); return false;" do -%>
+  <div class="row">
+    <span class="field">Host: <input type="text" name="host"></span>
+    <span class="field">DNS Server: <input type="text" name="server"></span>
+    <span class="field">
+      <label for="verbose">Verbose:</label>
+      <input type="checkbox" name="verbose" id="verbose">
+    </span>
+  </div>
+  <div class="row"><%= submit_tag 'Execute' %></div>
+  <div class="row output-wrapper"></div>
+<% end -%>

@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang='en-US' xml:lang='en-US' xmlns='http://www.w3.org/1999/xhtml'>
+  <head>
+    <meta content='text/html; charset=utf-8' http-equiv='Content-type' />
+    <title>Looking Glass</title>
+    <%= stylesheet_link_tag 'main' %>
+    <%= javascript_include_tag :defaults %>
+    <link rel="shortcut icon" href="/favicon.ico" />
+  </head>
+  <body>
+    <div id="page">
+      <div id="header">
+        <div id="menu"><a href="<%= @contacts_link %>">?</a></div>
+        <img id="logo" src="/images/search-icon.png">
+        <h2>Looking Glass</h2>
+        <div id="navigation">
+          <ul>
+            <% @pages.each do |page| %>
+              <li class="<%= 'selected' if page[:selected] %>">
+                <a id="link-<%= page[:id] %>" href="#<%= page[:id] %>"><%= page[:id] %></a>
+              </li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+      <div id="main">
+        <% @pages.each do |page| %>
+            <div id="tab-<%= page[:id] %>" class="tab <%= 'hidden' unless page[:selected] %>">
+              <h1><%= page[:id] %></h1>
+              <%= render :partial => "service/" + page[:id], :locals => { :page => page } %>
+            </div>
+        <% end %>
+      </div>
+    </div>
+  </body>
+</html>

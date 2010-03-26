@@ -1,0 +1,12 @@
+<div class="hint">traceroute - print the route packets trace to network host</div>
+<% form_tag '/service/' + page[:id], :onsubmit => "LookingGlass.formHandler(this); return false;" do -%>
+  <div class="row">
+    <span class="field">Host: <input type="text" name="host"></span>
+    <span class="field">
+      <label for="resolve">Resolve names:</label>
+      <input type="checkbox" name="resolve" id="resolve" checked="checked">
+    </span>
+  </div>
+  <div class="row"><%= submit_tag 'Execute' %></div>
+  <div class="row output-wrapper"></div>
+<% end -%>
