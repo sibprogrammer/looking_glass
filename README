@@ -1,13 +1,13 @@
-h1. Looking Glass
+== Looking Glass ==
 
 Web frontend for popular network diagnostic tools.
 
-h1. Author
+== Author ==
 
 Author: Alexei Yuzhakov
-Copyrigh (c) 2010
+Copyright (c) 2010
 
-h1. License
+== License ==
 
 This software is licensed under the terms of the GPL 2.0 license. 
 Additional information can be found at http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
